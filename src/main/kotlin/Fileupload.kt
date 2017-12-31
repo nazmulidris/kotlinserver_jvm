@@ -80,7 +80,7 @@ object fileupload {
         val buffer = StringBuilder()
         val totals = mutableMapOf<Category, Float>()
 
-        map.keys.forEach {
+        map.toSortedMap().keys.forEach {
             // every category
 
             var categoryTotal = 0f
@@ -119,20 +119,29 @@ object fileupload {
     }
 
     enum class Category(val descriptionList: List<String>) {
-        Restaurants(listOf("doordash", "LYFE KITCHEN", "COUPA", "LISAS TEA TIME LLC", "SQ")),
-        Groceries(listOf("wholefds")),
-        Chocolate(listOf("WWWVALRHONA")),
+        Cars(listOf("PORSCHE")),
         RideShare(listOf("LYFT", "UBER")),
-        Transportation(listOf("PORSCHE")),
-        Household(listOf("amazon", "jet.com", "walmart", "UPS", "USPS")),
-        Beauty(listOf("VIZAVOO")),
+
+        Household(listOf("Amazon.com","AMAZON MKTPLACE PMTS", "jet.com", "walmart", "UPS", "USPS")),
+
         Phone(listOf("VZWRLSS")),
-        Movies(listOf("Amazon Video On Demand")),
-        Books(listOf("Amazon Services-Kindle")),
-        Music(listOf("GOOGLE *Google Music")),
-        Health(listOf("GOOGLE *Massage", "GOOGLE WELLNESS CTR")),
         Internet(listOf("COMCAST CALIFORNIA")),
+
+        Groceries(listOf("wholefds")),
+        Restaurants(listOf("doordash", "LYFE KITCHEN", "COUPA", "LISAS TEA TIME LLC", "SQ")),
+        Chocolate(listOf("WWWVALRHONA")),
+
+        Health(listOf("GOOGLE *Massage", "GOOGLE WELLNESS CTR")),
+
+        Books(listOf("Amazon Services-Kindle")),
+
+        Music(listOf("GOOGLE *Google Music")),
+        Movies(listOf("Amazon Video On Demand")),
+
         TechSubscription(listOf("HEROKU", "github")),
+
+        Beauty(listOf("VIZAVOO")),
+
         RetirementHome(listOf("TransferwiseCom_USD")),
         Unknown(listOf())
     }
