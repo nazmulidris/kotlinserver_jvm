@@ -1,7 +1,5 @@
-
 import io.javalin.Context
 import io.javalin.Handler
-import org.apache.commons.io.IOUtils
 
 /*
  * Copyright 2017 Nazmul Idris All rights reserved.
@@ -28,14 +26,4 @@ object path2 : Handler {
 
 fun doPath(ctx: Context) {
     ctx.result(::doPath.name)
-}
-
-object fileupload {
-    fun name() = javaClass.name
-    fun run(ctx: Context) {
-        ctx.uploadedFiles("files").forEach {
-            val content = IOUtils.toString(it.content, "UTF-8")
-            ctx.html(content)
-        }
-    }
 }
