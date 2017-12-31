@@ -1,3 +1,8 @@
+
+import io.javalin.Context
+import io.javalin.Handler
+import org.apache.commons.io.IOUtils
+
 /*
  * Copyright 2017 Nazmul Idris All rights reserved.
  *
@@ -14,22 +19,23 @@
  * limitations under the License.
  */
 
-import io.javalin.Javalin
+object path2 : Handler {
+    fun name(): String = javaClass.name
+    override fun handle(ctx: Context?) {
+        ctx?.result(name())
+    }
+}
 
-fun main(args: Array<String>) {
-    Javalin.create().apply {
-        port(getPort())
-        enableDynamicGzip()
-        enableStaticFiles("/public")
-        start()
-        get("/") { it.redirect("index.html") }
-        get("/hola") { it.result("hello world") }
-        get("/hola/:name") {
-            val param = it.param("name")
-            it.result("hello ${param ?: "world"}")
+fun doPath(ctx: Context) {
+    ctx.result(::doPath.name)
+}
+
+object fileupload {
+    fun name() = javaClass.name
+    fun run(ctx: Context) {
+        ctx.uploadedFiles("files").forEach {
+            val content = IOUtils.toString(it.content, "UTF-8")
+            ctx.html(content)
         }
-        get("doPath", ::doPath)
-        get(path2.name(), path2)
-        post(fileupload.name(), fileupload::run)
     }
 }

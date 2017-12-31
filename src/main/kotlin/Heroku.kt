@@ -14,22 +14,7 @@
  * limitations under the License.
  */
 
-import io.javalin.Javalin
-
-fun main(args: Array<String>) {
-    Javalin.create().apply {
-        port(getPort())
-        enableDynamicGzip()
-        enableStaticFiles("/public")
-        start()
-        get("/") { it.redirect("index.html") }
-        get("/hola") { it.result("hello world") }
-        get("/hola/:name") {
-            val param = it.param("name")
-            it.result("hello ${param ?: "world"}")
-        }
-        get("doPath", ::doPath)
-        get(path2.name(), path2)
-        post(fileupload.name(), fileupload::run)
-    }
+fun getPort(): Int {
+    val builder = ProcessBuilder()
+    return builder.environment()["PORT"]?.toInt() ?: 7000
 }
