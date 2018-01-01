@@ -125,6 +125,7 @@
                 <version>1.1.3</version>
                 <configuration>
                     <jdkVersion>1.8</jdkVersion>
+                    <!-- This must match the app name on heroku -->
                     <appName>kotlinserver-jvm</appName>
                     <processTypes>
                         <!-- Tell Heroku how to launch your application -->
