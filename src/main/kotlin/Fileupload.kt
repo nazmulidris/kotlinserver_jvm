@@ -60,10 +60,10 @@ object fileupload {
         for (record in recordList) {
             val (type, transDate, postDate, description, amount) = record
 
-            // Match each record to a category
+            // Check to see if the record matches any of the Categories
             Category.values().forEach { category ->
                 category.descriptionList.forEach { categoryDescription ->
-                    if (description.contains(other = categoryDescription, ignoreCase = true)) {
+                    if (description.contains(categoryDescription, true)) {
                         map.getOrPut(category) { mutableListOf() }.add(record)
                     }
                 }
@@ -80,14 +80,12 @@ object fileupload {
         val buffer = StringBuilder()
         val totals = mutableMapOf<Category, Float>()
 
-        map.toSortedMap().keys.forEach {
-            // every category
+        map.toSortedMap().keys.forEach { // every category
 
             var categoryTotal = 0f
 
             val recordBuffer = StringBuilder()
-            map[it]?.forEach {
-                // every record in a category
+            map[it]?.forEach { // every record in a category
                 categoryTotal += it.amount
                 with(recordBuffer) {
                     val highlightColor = when (it.type) {
@@ -122,7 +120,7 @@ object fileupload {
         Cars(listOf("PORSCHE")),
         RideShare(listOf("LYFT", "UBER")),
 
-        Household(listOf("Amazon.com","AMAZON MKTPLACE PMTS", "jet.com", "walmart", "UPS", "USPS")),
+        Household(listOf("Amazon.com", "AMAZON MKTPLACE PMTS", "jet.com", "walmart", "UPS", "USPS")),
 
         Phone(listOf("VZWRLSS")),
         Internet(listOf("COMCAST CALIFORNIA")),
