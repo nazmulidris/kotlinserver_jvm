@@ -117,30 +117,42 @@ object fileupload {
     }
 
     enum class Category(val descriptionList: List<String>) {
+        // Transportation
         Cars(listOf("PORSCHE")),
         RideShare(listOf("LYFT", "UBER")),
 
+        // Household
         Household(listOf("Amazon.com", "AMAZON MKTPLACE PMTS", "jet.com", "walmart", "UPS", "USPS")),
 
+        // Services
         Phone(listOf("VZWRLSS")),
         Internet(listOf("COMCAST CALIFORNIA")),
 
+        // Food
         Groceries(listOf("wholefds")),
         Restaurants(listOf("doordash", "LYFE KITCHEN", "COUPA", "LISAS TEA TIME LLC", "SQ")),
         Chocolate(listOf("WWWVALRHONA")),
 
+        // Health
         Health(listOf("GOOGLE *Massage", "GOOGLE WELLNESS CTR")),
 
+        // Education
         Books(listOf("Amazon Services-Kindle")),
 
+        // Entertainment
         Music(listOf("GOOGLE *Google Music")),
         Movies(listOf("Amazon Video On Demand")),
 
+        // IT
         TechSubscription(listOf("HEROKU", "github")),
 
+        // Grooming
         Beauty(listOf("VIZAVOO")),
 
+        // Other
         RetirementHome(listOf("TransferwiseCom_USD")),
+
+        // Unknown
         Unknown(listOf())
     }
 
