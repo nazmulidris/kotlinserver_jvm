@@ -24,10 +24,13 @@ import java.time.format.DateTimeFormatter
 object fileupload {
     fun name() = javaClass.name
     fun run(ctx: Context) {
-        ctx.uploadedFiles("files").forEach {
-            val csvString = IOUtils.toString(it.content, "UTF-8")
-            ctx.html(process(csvString))
+        val sb = StringBuilder()
+        for ((idx, file) in ctx.uploadedFiles("files").withIndex()) {
+            val csvString = IOUtils.toString(file.content, "UTF-8")
+            sb.append("<h1>File #$idx : ${file.name}</h1>")
+            sb.append(process(csvString))
         }
+        ctx.html(sb.toString())
     }
 
     fun process(csvString: String): String {
@@ -104,11 +107,11 @@ object fileupload {
             totals.getOrPut(it) { categoryTotal }
 
             with(buffer) {
-                append("<h1>")
+                append("<h2>")
                 append(it)
                 append(", ")
                 append(categoryTotal)
-                append("</h1>")
+                append("</h2>")
                 append(recordBuffer)
             }
 
