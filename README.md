@@ -1,7 +1,11 @@
 # kotlinserver
 
 This project uses the Javalin REST API for Kotlin to make a simple
-server that can be hosted on Heroku. 
+server that can be hosted on Heroku.
+
+This is a maven project. You can use `mvn package` im order to build
+the fat JAR for the server. You can use `deploy.sh` to push this into
+heroku.
 
 Here are some useful links:
 - [Javalin](https://javalin.io/)
