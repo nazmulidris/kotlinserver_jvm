@@ -83,7 +83,7 @@ object fileupload {
         val buffer = StringBuilder()
         val totals = mutableMapOf<Category, Float>()
 
-        map.toSortedMap().keys.forEach { // every category
+        map.keys.sorted().forEach { // every category
 
             var categoryTotal = 0f
 
