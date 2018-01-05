@@ -83,12 +83,14 @@ object fileupload {
         val buffer = StringBuilder()
         val totals = mutableMapOf<Category, Float>()
 
-        map.keys.sorted().forEach { // every category
+        map.keys.sorted().forEach {
+            // every category
 
             var categoryTotal = 0f
 
             val recordBuffer = StringBuilder()
-            map[it]?.forEach { // every record in a category
+            map[it]?.forEach {
+                // every record in a category
                 categoryTotal += it.amount
                 with(recordBuffer) {
                     val highlightColor = when (it.type) {
@@ -125,15 +127,19 @@ object fileupload {
         RideShare(listOf("LYFT", "UBER")),
 
         // Household
-        Household(listOf("Amazon.com", "AMAZON MKTPLACE PMTS", "jet.com", "walmart", "UPS", "USPS")),
+        Household(
+                listOf("Amazon.com", "AMAZON MKTPLACE PMTS", "jet.com", "walmart",
+                        "UPS", "USPS", "CRATE &amp; BARREL")),
 
         // Services
         Phone(listOf("VZWRLSS")),
         Internet(listOf("COMCAST CALIFORNIA")),
 
         // Food
-        Groceries(listOf("wholefds")),
-        Restaurants(listOf("doordash", "LYFE KITCHEN", "COUPA", "LISAS TEA TIME LLC", "SQ")),
+        Groceries(listOf("wholefds", "WHOLEFOODS.COM")),
+        Restaurants(
+                listOf("doordash", "LYFE KITCHEN", "COUPA", "LISAS TEA TIME LLC",
+                        "SQ", "YLP* SHOP@YELP.COM")),
         Chocolate(listOf("WWWVALRHONA")),
 
         // Health
@@ -146,11 +152,11 @@ object fileupload {
         Music(listOf("GOOGLE *Google Music")),
         Movies(listOf("Amazon Video On Demand")),
 
-        // IT
+        // I
         TechSubscription(listOf("HEROKU", "github")),
 
         // Grooming
-        Beauty(listOf("VIZAVOO")),
+        Beauty(listOf("VIZAVOO", "ETSY.COM")),
 
         // Other
         RetirementHome(listOf("TransferwiseCom_USD")),
