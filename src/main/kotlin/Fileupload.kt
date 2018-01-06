@@ -25,11 +25,24 @@ object fileupload {
     fun name() = javaClass.name
     fun run(ctx: Context) {
         val sb = StringBuilder()
+        sb.append("""
+            <html>
+            <head>
+                <title>Spend Analysis</title>
+                <link href="https://fonts.googleapis.com/css?family=Google+Sans" rel="stylesheet">
+                <style>
+                    h1 { font-family: 'Google Sans', Arial, sans-serif; }
+                    h2 { font-family: 'Google Sans', Arial, sans-serif; }
+                </style>
+            <head/>
+            <body>
+            """)
         for ((idx, file) in ctx.uploadedFiles("files").withIndex()) {
             val csvString = IOUtils.toString(file.content, "UTF-8")
             sb.append("<h1>File #$idx : ${file.name}</h1>")
             sb.append(process(csvString))
         }
+        sb.append("</body></html>")
         ctx.html(sb.toString())
     }
 
