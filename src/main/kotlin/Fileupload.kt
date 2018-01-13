@@ -147,12 +147,13 @@ object fileupload {
         // Services
         Phone(listOf("VZWRLSS")),
         Internet(listOf("COMCAST CALIFORNIA")),
+        Utilities(listOf("CITY OF PALO ALTO UT")),
 
         // Food
         Groceries(listOf("wholefds", "WHOLEFOODS.COM")),
         Restaurants(
                 listOf("doordash", "LYFE KITCHEN", "COUPA", "LISAS TEA TIME LLC",
-                        "SQ", "YLP* SHOP@YELP.COM")),
+                        "SQ", "YLP* SHOP@YELP.COM", "DARBAR INDIAN CUISINE")),
         Chocolate(listOf("WWWVALRHONA")),
 
         // Health
@@ -166,10 +167,12 @@ object fileupload {
         Movies(listOf("Amazon Video On Demand")),
 
         // I
-        TechSubscription(listOf("HEROKU", "github")),
+        TechSubscription(listOf("HEROKU", "github", "ADOBE *PHOTOGPHY PLAN")),
 
         // Grooming
-        Beauty(listOf("VIZAVOO", "ETSY.COM")),
+        Beauty(
+                listOf("NORDSTROM DIRECT #0808", "MACYS", "CVS/PHARMACY #09915",
+                        "MADISON REED", "VIZAVOO", "ETSY.COM")),
 
         // Other
         RetirementHome(listOf("TransferwiseCom_USD")),
