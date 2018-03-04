@@ -137,12 +137,14 @@ object fileupload {
     enum class Category(val descriptionList: List<String>) {
         // Transportation
         Cars(listOf("PORSCHE")),
+        Gas(listOf("MENLO PARK BEACON", "SHELL OIL", "CHEVRON")),
         RideShare(listOf("LYFT", "UBER")),
 
         // Household
         Household(
                 listOf("Amazon.com", "AMAZON MKTPLACE PMTS", "jet.com", "walmart",
-                        "UPS", "USPS", "CRATE &amp; BARREL")),
+                        "UPS", "USPS", "CRATE &amp; BARREL", "BedBathBeyond",
+                        "WAL-MART")),
 
         // Services
         Phone(listOf("VZWRLSS")),
@@ -150,10 +152,12 @@ object fileupload {
         Utilities(listOf("CITY OF PALO ALTO UT")),
 
         // Food
-        Groceries(listOf("wholefds", "WHOLEFOODS.COM")),
+        Groceries(listOf("wholefds", "WHOLEFOODS.COM", "TRADER JOE")),
         Restaurants(
                 listOf("doordash", "LYFE KITCHEN", "COUPA", "LISAS TEA TIME LLC",
-                        "SQ", "YLP* SHOP@YELP.COM", "DARBAR INDIAN CUISINE")),
+                        "SQ", "YLP* SHOP@YELP.COM", "DARBAR INDIAN CUISINE",
+                        "POKI BOW", "HANAHAUS", "ROAM SAN MATEO", "FUKI SUSHI",
+                        "STARBUCKS")),
         Chocolate(listOf("WWWVALRHONA")),
 
         // Health
@@ -161,18 +165,21 @@ object fileupload {
 
         // Education
         Books(listOf("Amazon Services-Kindle")),
+        Courses(listOf("UDACITY", "EB INTERSECT 2018")),
 
         // Entertainment
         Music(listOf("GOOGLE *Google Music")),
-        Movies(listOf("Amazon Video On Demand")),
+        Movies(listOf("Amazon Video On Demand", "CINEMARK", "GOOGLE *Google Play")),
 
-        // I
-        TechSubscription(listOf("HEROKU", "github", "ADOBE *PHOTOGPHY PLAN")),
+        // Technology
+        TechSubscription(listOf("HEROKU", "github", "ADOBE")),
+        Domains(listOf("GOOGLE *Domains")),
 
         // Grooming
         Beauty(
-                listOf("NORDSTROM DIRECT #0808", "MACYS", "CVS/PHARMACY #09915",
+                listOf("NORDSTROM", "MACYS", "CVS/PHARMACY #09915",
                         "MADISON REED", "VIZAVOO", "ETSY.COM")),
+        Clothing(listOf("Karen Millen")),
 
         // Other
         RetirementHome(listOf("TransferwiseCom_USD")),
