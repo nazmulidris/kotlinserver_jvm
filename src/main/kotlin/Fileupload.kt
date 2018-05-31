@@ -136,8 +136,8 @@ object fileupload {
 
     enum class Category(val descriptionList: List<String>) {
         // Transportation
-        Cars(listOf("PORSCHE")),
-        Gas(listOf("MENLO PARK BEACON", "SHELL OIL", "CHEVRON")),
+        Cars(listOf("DETAIL PLUS", "PORSCHE", "HOOKED ON DRIVING", "HEYER PERFORMANCE")),
+        Gas(listOf("THUNDERHILL PARK", "MENLO PARK BEACON", "SHELL OIL", "CHEVRON", "GAS")),
         RideShare(listOf("LYFT", "UBER")),
 
         // Household
@@ -157,7 +157,7 @@ object fileupload {
                 listOf("doordash", "LYFE KITCHEN", "COUPA", "LISAS TEA TIME LLC",
                         "SQ", "YLP* SHOP@YELP.COM", "DARBAR INDIAN CUISINE",
                         "POKI BOW", "HANAHAUS", "ROAM SAN MATEO", "FUKI SUSHI",
-                        "STARBUCKS")),
+                        "STARBUCKS", "GRUBHUB")),
         Chocolate(listOf("WWWVALRHONA")),
 
         // Health
@@ -169,20 +169,22 @@ object fileupload {
 
         // Entertainment
         Music(listOf("GOOGLE *Google Music")),
-        Movies(listOf("Amazon Video On Demand", "CINEMARK", "GOOGLE *Google Play")),
+        Movies(listOf("Amazon Video On Demand", "CINEMARK",
+                "GOOGLE *Google Play", "HBO")),
 
         // Technology
-        TechSubscription(listOf("HEROKU", "github", "ADOBE")),
+        TechSubscription(listOf("HEROKU", "github", "ADOBE", "JetBrains", "MEETUP")),
         Domains(listOf("GOOGLE *Domains")),
 
         // Grooming
         Beauty(
                 listOf("NORDSTROM", "MACYS", "CVS/PHARMACY #09915",
                         "MADISON REED", "VIZAVOO", "ETSY.COM")),
-        Clothing(listOf("Karen Millen")),
+        Clothing(listOf("Karen Millen", "Fabric.com", "7 FOR ALL MANKIND")),
 
         // Other
         RetirementHome(listOf("TransferwiseCom_USD")),
+        Tax(listOf("TAX")),
 
         // Unknown
         Unknown(listOf())
