@@ -136,8 +136,10 @@ object fileupload {
 
     enum class Category(val descriptionList: List<String>) {
         // Transportation
-        Cars(listOf("DETAIL PLUS", "PORSCHE", "HOOKED ON DRIVING", "HEYER PERFORMANCE")),
-        Gas(listOf("THUNDERHILL PARK", "MENLO PARK BEACON", "SHELL OIL", "CHEVRON", "GAS")),
+        Cars(listOf("DETAIL PLUS", "PORSCHE", "HOOKED ON DRIVING", "HEYER PERFORMANCE",
+                "THE TOLL ROADS")),
+        Gas(listOf("THUNDERHILL PARK", "MENLO PARK BEACON", "SHELL OIL", "CHEVRON", "GAS",
+                "ABM ONSITE MARSHALL")),
         RideShare(listOf("LYFT", "UBER")),
 
         // Household
@@ -157,7 +159,7 @@ object fileupload {
                 listOf("doordash", "LYFE KITCHEN", "COUPA", "LISAS TEA TIME LLC",
                         "SQ", "YLP* SHOP@YELP.COM", "DARBAR INDIAN CUISINE",
                         "POKI BOW", "HANAHAUS", "ROAM SAN MATEO", "FUKI SUSHI",
-                        "STARBUCKS", "GRUBHUB")),
+                        "STARBUCKS", "GRUBHUB", "AD HOC", "CHAAT BHAVAN")),
         Chocolate(listOf("WWWVALRHONA")),
 
         // Health
@@ -173,7 +175,8 @@ object fileupload {
                 "GOOGLE *Google Play", "HBO")),
 
         // Technology
-        TechSubscription(listOf("HEROKU", "github", "ADOBE", "JetBrains", "MEETUP")),
+        TechSubscription(listOf("HEROKU", "github", "ADOBE", "JetBrains", "MEETUP",
+                "Google Storage")),
         Domains(listOf("GOOGLE *Domains")),
 
         // Grooming
