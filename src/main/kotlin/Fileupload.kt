@@ -192,7 +192,7 @@ object fileupload {
         Tax(listOf("TAX")),
 
         // Unknown
-        Unknown(listOf())
+        Unknown(listOf("HANAHAUS RESERVATION"))
     }
 
     enum class Headers(val id: String) {
