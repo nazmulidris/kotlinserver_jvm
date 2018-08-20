@@ -156,14 +156,16 @@ object fileupload {
         // Food
         Groceries(listOf("wholefds", "WHOLEFOODS.COM", "TRADER JOE")),
         Restaurants(
-                listOf("SQ *CAVIAR", "doordash", "LYFE KITCHEN", "COUPA", "LISAS TEA TIME LLC",
-                        "SQ", "YLP* SHOP@YELP.COM", "DARBAR INDIAN CUISINE",
+                listOf("SQ *CAVIAR", "BLUE BOTTLE COFFEE", "doordash",
+                        "LYFE KITCHEN", "COUPA", "LISAS TEA TIME LLC",
+                        "YLP* SHOP@YELP.COM", "DARBAR INDIAN CUISINE",
                         "POKI BOW", "HANAHAUS", "ROAM SAN MATEO", "FUKI SUSHI",
-                        "STARBUCKS", "GRUBHUB", "AD HOC", "CHAAT BHAVAN")),
+                        "STARBUCKS", "GRUBHUB", "AD HOC", "CHAAT BHAVAN",
+                        "CAFE VENETIA")),
         Chocolate(listOf("WWWVALRHONA")),
 
         // Health
-        Health(listOf("GOOGLE *Massage", "GOOGLE WELLNESS CTR")),
+        Health(listOf("GOOGLE *Massage", "GOOGLE WELLNESS CTR", "*OSMENA PEARL")),
 
         // Education
         Books(listOf("Amazon Services-Kindle")),
