@@ -184,7 +184,7 @@ object fileupload {
                                 "Google Storage", "GOOGLE *Dark Sky", "INVISIONAPP",
                                 "LUCID SOFTWARE INC", "FS *Sketch", "STUDIO MDS",
                                 "CREATIVEMARKET.COM", "FRAMER.COM", "ESET WWW.ESET.COM",
-                                "PATREON*PLEDGE")),
+                                "PATREON*PLEDGE", "LINKEDIN")),
         Domains(listOf("GOOGLE *Domains")),
 
         // Grooming
