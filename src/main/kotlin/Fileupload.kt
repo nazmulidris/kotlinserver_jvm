@@ -137,16 +137,16 @@ object fileupload {
     enum class Category(val descriptionList: List<String>) {
         // Transportation
         Cars(listOf("DETAIL PLUS", "PORSCHE", "HOOKED ON DRIVING", "HEYER PERFORMANCE",
-                "THE TOLL ROADS")),
+                    "THE TOLL ROADS", "GEICO *AUTO")),
         Gas(listOf("THUNDERHILL PARK", "MENLO PARK BEACON", "SHELL OIL", "CHEVRON", "GAS",
-                "ABM ONSITE MARSHALL")),
+                    "ABM ONSITE MARSHALL")),
         RideShare(listOf("LYFT", "UBER")),
 
         // Household
         Household(
                 listOf("Amazon.com", "AMAZON MKTPLACE PMTS", "jet.com", "walmart",
                         "UPS", "USPS", "CRATE &amp; BARREL", "BedBathBeyond",
-                        "WAL-MART", "CVS/PHARMACY", "TARGET", "STAPLES")),
+                        "WAL-MART", "CVS/PHARMACY", "TARGET", "STAPLES", "IKEA.COM")),
 
         // Services
         Phone(listOf("VZWRLSS")),
@@ -154,14 +154,16 @@ object fileupload {
         Utilities(listOf("CITY OF PALO ALTO UT")),
 
         // Food
-        Groceries(listOf("wholefds", "WHOLEFOODS.COM", "TRADER JOE")),
+        Groceries(listOf("wholefds", "WHOLEFOODS.COM", "TRADER JOE",
+                         "Amazon Prime Now", "Amazon Prime Now Tips")),
         Restaurants(
                 listOf("SQ *CAVIAR", "BLUE BOTTLE COFFEE", "doordash",
                         "LYFE KITCHEN", "COUPA", "LISAS TEA TIME LLC",
                         "YLP* SHOP@YELP.COM", "DARBAR INDIAN CUISINE",
                         "POKI BOW", "ROAM SAN MATEO", "FUKI SUSHI",
                         "STARBUCKS", "GRUBHUB", "AD HOC", "CHAAT BHAVAN",
-                        "CAFE VENETIA", "CHROMATIC COFFEE", "CAFE SPROUT")),
+                        "CAFE VENETIA", "CHROMATIC COFFEE", "CAFE SPROUT",
+                        "RANGOON RUBY", "LOCAL UNION 271", "ORENS HUMMUS")),
         Chocolate(listOf("WWWVALRHONA")),
 
         // Health
@@ -169,7 +171,7 @@ object fileupload {
 
         // Education
         Books(listOf("Amazon Services-Kindle")),
-        Courses(listOf("UDACITY", "EB INTERSECT 2018")),
+        Courses(listOf("UDACITY", "EB INTERSECT 2018", "JOYCE THOM")),
 
         // Entertainment
         Music(listOf("GOOGLE *Google Music")),
@@ -181,13 +183,14 @@ object fileupload {
         TechSubscription(listOf("HEROKU", "github", "ADOBE", "JetBrains", "MEETUP",
                                 "Google Storage", "GOOGLE *Dark Sky", "INVISIONAPP",
                                 "LUCID SOFTWARE INC", "FS *Sketch", "STUDIO MDS",
-                                "CREATIVEMARKET.COM")),
+                                "CREATIVEMARKET.COM", "FRAMER.COM", "ESET WWW.ESET.COM",
+                                "PATREON*PLEDGE")),
         Domains(listOf("GOOGLE *Domains")),
 
         // Grooming
         Beauty(
-                listOf("NORDSTROM", "MACYS",
-                        "MADISON REED", "VIZAVOO", "ETSY.COM")),
+                listOf("NORDSTROM", "MACYS", "MADISON REED", "VIZAVOO", "ETSY.COM",
+                        "UMBRELLA SALON")),
         Clothing(listOf("Karen Millen", "Fabric.com", "7 FOR ALL MANKIND",
                         "BLUE NILE LLC")),
 
