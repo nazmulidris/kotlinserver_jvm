@@ -146,7 +146,7 @@ object fileupload {
         Household(
                 listOf("Amazon.com", "AMAZON MKTPLACE PMTS", "jet.com", "walmart",
                         "UPS", "USPS", "CRATE &amp; BARREL", "BedBathBeyond",
-                        "WAL-MART")),
+                        "WAL-MART", "CVS/PHARMACY")),
 
         // Services
         Phone(listOf("VZWRLSS")),
@@ -183,7 +183,7 @@ object fileupload {
 
         // Grooming
         Beauty(
-                listOf("NORDSTROM", "MACYS", "CVS/PHARMACY #09915",
+                listOf("NORDSTROM", "MACYS",
                         "MADISON REED", "VIZAVOO", "ETSY.COM")),
         Clothing(listOf("Karen Millen", "Fabric.com", "7 FOR ALL MANKIND")),
 
