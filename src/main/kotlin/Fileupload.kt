@@ -161,7 +161,7 @@ object fileupload {
                         "YLP* SHOP@YELP.COM", "DARBAR INDIAN CUISINE",
                         "POKI BOW", "ROAM SAN MATEO", "FUKI SUSHI",
                         "STARBUCKS", "GRUBHUB", "AD HOC", "CHAAT BHAVAN",
-                        "CAFE VENETIA", "CHROMATIC COFFEE")),
+                        "CAFE VENETIA", "CHROMATIC COFFEE", "CAFE SPROUT")),
         Chocolate(listOf("WWWVALRHONA")),
 
         // Health
@@ -180,7 +180,8 @@ object fileupload {
         // Technology
         TechSubscription(listOf("HEROKU", "github", "ADOBE", "JetBrains", "MEETUP",
                                 "Google Storage", "GOOGLE *Dark Sky", "INVISIONAPP",
-                                "LUCID SOFTWARE INC", "FS *Sketch", "STUDIO MDS")),
+                                "LUCID SOFTWARE INC", "FS *Sketch", "STUDIO MDS",
+                                "CREATIVEMARKET.COM")),
         Domains(listOf("GOOGLE *Domains")),
 
         // Grooming
