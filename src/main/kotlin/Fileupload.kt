@@ -137,7 +137,7 @@ object fileupload {
     enum class Category(val descriptionList: List<String>) {
         // Transportation
         Cars(listOf("DETAIL PLUS", "PORSCHE", "HOOKED ON DRIVING", "HEYER PERFORMANCE",
-                    "THE TOLL ROADS", "GEICO *AUTO")),
+                    "THE TOLL ROADS", "GEICO")),
         Gas(listOf("THUNDERHILL PARK", "MENLO PARK BEACON", "SHELL OIL", "CHEVRON", "GAS",
                     "ABM ONSITE MARSHALL")),
         RideShare(listOf("LYFT", "UBER")),
