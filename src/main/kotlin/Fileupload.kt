@@ -146,7 +146,7 @@ object fileupload {
         Household(
                 listOf("Amazon.com", "AMAZON MKTPLACE PMTS", "jet.com", "walmart",
                         "UPS", "USPS", "CRATE &amp; BARREL", "BedBathBeyond",
-                        "WAL-MART", "CVS/PHARMACY")),
+                        "WAL-MART", "CVS/PHARMACY", "TARGET", "STAPLES")),
 
         // Services
         Phone(listOf("VZWRLSS")),
@@ -159,9 +159,9 @@ object fileupload {
                 listOf("SQ *CAVIAR", "BLUE BOTTLE COFFEE", "doordash",
                         "LYFE KITCHEN", "COUPA", "LISAS TEA TIME LLC",
                         "YLP* SHOP@YELP.COM", "DARBAR INDIAN CUISINE",
-                        "POKI BOW", "HANAHAUS", "ROAM SAN MATEO", "FUKI SUSHI",
+                        "POKI BOW", "ROAM SAN MATEO", "FUKI SUSHI",
                         "STARBUCKS", "GRUBHUB", "AD HOC", "CHAAT BHAVAN",
-                        "CAFE VENETIA")),
+                        "CAFE VENETIA", "CHROMATIC COFFEE")),
         Chocolate(listOf("WWWVALRHONA")),
 
         // Health
@@ -174,18 +174,21 @@ object fileupload {
         // Entertainment
         Music(listOf("GOOGLE *Google Music")),
         Movies(listOf("Amazon Video On Demand", "CINEMARK",
-                "GOOGLE *Google Play", "HBO")),
+                "GOOGLE *Google Play", "HBO", "GOOGLE*GOOGLE PLAY",
+                "AMC ONLINE")),
 
         // Technology
         TechSubscription(listOf("HEROKU", "github", "ADOBE", "JetBrains", "MEETUP",
-                "Google Storage")),
+                                "Google Storage", "GOOGLE *Dark Sky", "INVISIONAPP",
+                                "LUCID SOFTWARE INC", "FS *Sketch", "STUDIO MDS")),
         Domains(listOf("GOOGLE *Domains")),
 
         // Grooming
         Beauty(
                 listOf("NORDSTROM", "MACYS",
                         "MADISON REED", "VIZAVOO", "ETSY.COM")),
-        Clothing(listOf("Karen Millen", "Fabric.com", "7 FOR ALL MANKIND")),
+        Clothing(listOf("Karen Millen", "Fabric.com", "7 FOR ALL MANKIND",
+                        "BLUE NILE LLC")),
 
         // Other
         RetirementHome(listOf("TransferwiseCom_USD")),
