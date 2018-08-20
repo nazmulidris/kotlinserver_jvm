@@ -156,7 +156,7 @@ object fileupload {
         // Food
         Groceries(listOf("wholefds", "WHOLEFOODS.COM", "TRADER JOE")),
         Restaurants(
-                listOf("doordash", "LYFE KITCHEN", "COUPA", "LISAS TEA TIME LLC",
+                listOf("SQ *CAVIAR", "doordash", "LYFE KITCHEN", "COUPA", "LISAS TEA TIME LLC",
                         "SQ", "YLP* SHOP@YELP.COM", "DARBAR INDIAN CUISINE",
                         "POKI BOW", "HANAHAUS", "ROAM SAN MATEO", "FUKI SUSHI",
                         "STARBUCKS", "GRUBHUB", "AD HOC", "CHAAT BHAVAN")),
