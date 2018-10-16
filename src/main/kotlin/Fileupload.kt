@@ -147,7 +147,7 @@ object fileupload {
                 listOf("Amazon.com", "AMAZON MKTPLACE PMTS", "AMZN Mktp", "jet.com", "walmart",
                         "UPS", "USPS", "CRATE &amp; BARREL", "BedBathBeyond",
                         "WAL-MART", "CVS/PHARMACY", "TARGET", "STAPLES", "IKEA.COM", "WWW.KOHLS" +
-                        ".COM", "JOANN STORES", "THE HOME DEPOT")),
+                        ".COM", "JOANN STORES", "THE HOME DEPOT", "IKEA EAST PALO ALTO")),
 
         // Services
         Phone(listOf("VZWRLSS")),
