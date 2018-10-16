@@ -140,11 +140,11 @@ object fileupload {
                     "THE TOLL ROADS", "GEICO")),
         Gas(listOf("THUNDERHILL PARK", "MENLO PARK BEACON", "SHELL OIL", "CHEVRON", "GAS",
                     "ABM ONSITE MARSHALL")),
-        RideShare(listOf("LYFT", "UBER")),
+        RideShare(listOf("LYFT", "UBER", "BART-DALY CITY QPS")),
 
         // Household
         Household(
-                listOf("Amazon.com", "AMAZON MKTPLACE PMTS", "jet.com", "walmart",
+                listOf("Amazon.com", "AMAZON MKTPLACE PMTS", "AMZN Mktp", "jet.com", "walmart",
                         "UPS", "USPS", "CRATE &amp; BARREL", "BedBathBeyond",
                         "WAL-MART", "CVS/PHARMACY", "TARGET", "STAPLES", "IKEA.COM")),
 
@@ -155,7 +155,7 @@ object fileupload {
 
         // Food
         Groceries(listOf("wholefds", "WHOLEFOODS.COM", "TRADER JOE",
-                         "Amazon Prime Now", "Amazon Prime Now Tips")),
+                         "Amazon Prime Now", "PrimeNowMktp", "Amazon Prime Now Tips")),
         Restaurants(
                 listOf("SQ *CAVIAR", "BLUE BOTTLE COFFEE", "doordash",
                         "LYFE KITCHEN", "COUPA", "LISAS TEA TIME LLC",
