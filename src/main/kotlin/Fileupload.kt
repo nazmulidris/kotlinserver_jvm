@@ -146,7 +146,8 @@ object fileupload {
         Household(
                 listOf("Amazon.com", "AMAZON MKTPLACE PMTS", "AMZN Mktp", "jet.com", "walmart",
                         "UPS", "USPS", "CRATE &amp; BARREL", "BedBathBeyond",
-                        "WAL-MART", "CVS/PHARMACY", "TARGET", "STAPLES", "IKEA.COM")),
+                        "WAL-MART", "CVS/PHARMACY", "TARGET", "STAPLES", "IKEA.COM", "WWW.KOHLS" +
+                        ".COM", "JOANN STORES", "THE HOME DEPOT")),
 
         // Services
         Phone(listOf("VZWRLSS")),
@@ -154,8 +155,9 @@ object fileupload {
         Utilities(listOf("CITY OF PALO ALTO UT")),
 
         // Food
-        Groceries(listOf("wholefds", "WHOLEFOODS.COM", "TRADER JOE",
-                         "Amazon Prime Now", "PrimeNowMktp", "Amazon Prime Now Tips")),
+        Groceries(listOf("wholefds", "WHOLEFOODS.COM", "AMZ*WholeFoodsSTC10267", "TRADER JOE",
+                         "Amazon Prime Now", "PrimeNowMktp", "Prime Now",
+                         "Amazon Prime Now Tips", "SAFEWAY")),
         Restaurants(
                 listOf("SQ *CAVIAR", "BLUE BOTTLE COFFEE", "doordash",
                         "LYFE KITCHEN", "COUPA", "LISAS TEA TIME LLC",
@@ -184,7 +186,7 @@ object fileupload {
                                 "Google Storage", "GOOGLE *Dark Sky", "INVISIONAPP",
                                 "LUCID SOFTWARE INC", "FS *Sketch", "STUDIO MDS",
                                 "CREATIVEMARKET.COM", "FRAMER.COM", "ESET WWW.ESET.COM",
-                                "PATREON*PLEDGE", "LINKEDIN")),
+                                "PATREON*PLEDGE", "LINKEDIN", "SUBLIME HQ PTY LTD")),
         Domains(listOf("GOOGLE *Domains")),
 
         // Grooming
