@@ -57,15 +57,15 @@ object fileupload {
         // Process each line in the reader
         for (line in lines) {
             with(line) {
-                recordList.add(
-                        Record(
-                                type = get(Headers.TYPE.id),
-                                transDate = get(Headers.XACT.id).parseDate(),
-                                postDate = get(Headers.POST.id).parseDate(),
-                                description = get(Headers.DESC.id),
-                                amount = get(Headers.AMT.id).parseFloat()
-                        )
+                val record = Record(
+                        type = get(Headers.TYPE.id),
+                        transDate = get(Headers.XACT.id).parseDate(),
+                        postDate = get(Headers.POST.id).parseDate(),
+                        description = get(Headers.DESC.id),
+                        amount = get(Headers.AMT.id).parseFloat()
                 )
+                // Don't include "Payment" record types into the analysis, ignore them.
+                if (record.type != "Payment") recordList.add(record)
             }
         }
         return recordList
@@ -135,78 +135,114 @@ object fileupload {
     }
 
     enum class Category(val descriptionList: List<String>) {
-        // Transportation
-        Cars(listOf("DETAIL PLUS", "PORSCHE", "HOOKED ON DRIVING", "HEYER PERFORMANCE",
-                    "THE TOLL ROADS", "GEICO", "CARMAX")),
-        Gas(listOf("THUNDERHILL PARK", "MENLO PARK BEACON", "SHELL OIL", "CHEVRON", "GAS",
-                    "ABM ONSITE MARSHALL")),
-        RideShare(listOf("LYFT", "UBER", "BART-DALY CITY QPS")),
+        // Recreation.
+        Recreation(listOf("TICKLE PINK INN", "NAZARETH ICE OASIS", "THE FIGURE SKATING PRO SH",
+                          "SAN LUIS CREEK LODGE", "THE ESTATE YOUNTVILLE",
+                          "SIMRACEWAY PERFORMANCE", "BAY AREA GUN VAULT",
+                          "WATERCOURSE WAY", "BAYAREADRIVINGACADEMY",
+                          "HOLIDAY INN EXPRESS &amp; SU")),
 
-        // Household
+        // Transportation.
+        Cars(listOf("DETAIL PLUS", "PORSCHE", "HOOKED ON DRIVING", "HEYER PERFORMANCE",
+                    "THE TOLL ROADS", "GEICO", "CARMAX", "SFMTA 5TH &amp; MISSION GARA",
+                    "CUSTOM ALIGNMENT", "THE TIRE RACK", "OG RACING AAR RACING GE")),
+        Gas(listOf("THUNDERHILL PARK", "MENLO PARK BEACON", "SHELL OIL", "CHEVRON", "GAS",
+                   "ABM ONSITE MARSHALL", "LAKEWOOD VALERO", "SALAH SINCLAIR",
+                   "76 - PATRICK POUNDERS", "7-ELEVEN 33011")),
+        RideShare(listOf("LYFT", "UBER", "BART-DALY CITY QPS", "ENTERPRISE RENT-A-CAR",
+                         "CALTRAIN 1010 HILLSDALE", "CSJ MKT &amp; S PEDRO GARAGE",
+                         "BART-DALY CITY     QPS")),
+
+        // Household.
         Household(
                 listOf("Amazon.com", "AMAZON MKTPLACE PMTS", "AMZN Mktp", "jet.com", "walmart",
-                        "UPS", "USPS", "CRATE &amp; BARREL", "BedBathBeyond",
-                        "WAL-MART", "CVS/PHARMACY", "TARGET", "STAPLES", "IKEA.COM", "WWW.KOHLS" +
-                        ".COM", "JOANN STORES", "THE HOME DEPOT", "IKEA EAST PALO ALTO",
-                        "Amazon Prime", "TASKRABBIT", "ROOTCANDLES.COM", "WEST ELM E-COMMERCE")),
+                       "UPS", "USPS", "BedBathBeyond",
+                       "WAL-MART", "CVS/PHARMACY", "TARGET", "STAPLES", "IKEA.COM",
+                       "WWW.KOHLS.COM", "JOANN STORES", "THE HOME DEPOT", "IKEA EAST PALO ALTO",
+                       "Amazon Prime", "TASKRABBIT", "ROOTCANDLES.COM", "WEST ELM E-COMMERCE",
+                       "MACYS", "ART.COM/ALLPOSTERS.COM", "POTTERY BARN",
+                       "CRATE&amp;BARREL AND CB2", "CRATE &amp; BARREL", "WALGREENS",
+                       "MOO.COM", "BLOOMINGDALES  STANFORD", "YELPINC*DEALCALIFORNIA",
+                       "APPFEE*PARK SQUARE APA", "AMZ*UCA7-SanJose-Prime", "APPFEE*THE SHADOWS",
+                       "CALIFORNIA LOYAL MOVER")),
 
-        // Services
+        // Services.
         Phone(listOf("VZWRLSS")),
         Internet(listOf("COMCAST CALIFORNIA")),
         Utilities(listOf("CITY OF PALO ALTO UT")),
 
-        // Food
+        // Food.
         Groceries(listOf("wholefds", "WHOLEFOODS.COM", "AMZ*WholeFoodsSTC10267", "TRADER JOE",
                          "Amazon Prime Now", "PrimeNowMktp", "Prime Now",
-                         "Amazon Prime Now Tips", "SAFEWAY", "NIJIYA MARKET", "PrimeNowTips")),
+                         "Amazon Prime Now Tips", "SAFEWAY", "NIJIYA MARKET", "PrimeNowTips",
+                         "DITTMERS", "INSTACART")),
         Restaurants(
                 listOf("SQ *CAVIAR", "BLUE BOTTLE COFFEE", "doordash",
-                        "LYFE KITCHEN", "COUPA", "LISAS TEA TIME LLC",
-                        "YLP* SHOP@YELP.COM", "DARBAR INDIAN CUISINE",
-                        "POKI BOW", "ROAM SAN MATEO", "FUKI SUSHI",
-                        "STARBUCKS", "GRUBHUB", "AD HOC", "CHAAT BHAVAN",
-                        "CAFE VENETIA", "CHROMATIC COFFEE", "CAFE SPROUT",
-                        "RANGOON RUBY", "LOCAL UNION 271", "ORENS HUMMUS",
-                        "TEASPOON", "CASCAL", "SCOUT COFFEE", "GOSHI JAPANESE RESTAURANT",
-                        "BIG SKY CAFE", "COCOHODO SUNNYVALE", "WWW.TOMMY-THAI.COM",
-                        "SOGONG DONG TOFU HOUSE")),
+                       "LYFE KITCHEN", "COUPA", "LISAS TEA TIME LLC",
+                       "YLP* SHOP@YELP.COM", "DARBAR INDIAN CUISINE",
+                       "POKI BOW", "ROAM SAN MATEO", "FUKI SUSHI",
+                       "STARBUCKS", "GRUBHUB", "AD HOC", "CHAAT BHAVAN",
+                       "CAFE VENETIA", "CHROMATIC COFFEE", "CAFE SPROUT",
+                       "RANGOON RUBY", "LOCAL UNION 271", "ORENS HUMMUS",
+                       "TEASPOON", "CASCAL", "SCOUT COFFEE", "GOSHI JAPANESE RESTAURANT",
+                       "BIG SKY CAFE", "COCOHODO SUNNYVALE", "WWW.TOMMY-THAI.COM",
+                       "SOGONG DONG TOFU HOUSE", "YAKKO JAPANESE RESTAURANT",
+                       "SQ *SCOOP MICROCREAMERY", "ALEXANDER'S PATISSERIE", "SQ *FALAFEL STOP",
+                       "GOCHI JAPANESE TAPAS", "SQ *SULTANA MEDITERRANEAN",
+                       "THE COFFEE BEAN &amp; TEA LEA", "SQ *GELATAIO", "STEAM RESTAURANT",
+                       "INDIAN STREET CAFE", "SLIDERBAR CAFE", "NAPA VALLEY COFFEE ROAST",
+                       "SQ *RITUAL COFFEE ROASTER", "NAPA NOODLES", "THE COFFEE BEAN & TEA LEA",
+                       "SQ *GO FISH POKE BAR - WE", "EAT24 *SULTANA MEDITER")),
         Chocolate(listOf("WWWVALRHONA")),
 
-        // Health
+        // Health.
         Health(listOf("GOOGLE *Massage", "GOOGLE WELLNESS CTR", "*OSMENA PEARL")),
 
-        // Education
-        Books(listOf("Amazon Services-Kindle")),
-        Courses(listOf("UDACITY", "EB INTERSECT 2018", "JOYCE THOM", "HACKBRIGHT ACADEMY",
-                        "UdemyUS")),
+        // Education.
+        Education(listOf("UDACITY", "EB INTERSECT 2018", "JOYCE THOM", "HACKBRIGHT ACADEMY",
+                         "UdemyUS", "ACEABLE INC. ACEABLE C", "Amazon Services-Kindle",
+                         "Kindle Svcs", "SAN FRANCISCO SCHOOL OF")),
 
-        // Entertainment
+        // Entertainment.
         Music(listOf("GOOGLE *Google Music")),
         Movies(listOf("Amazon Video On Demand", "CINEMARK",
-                "GOOGLE *Google Play", "HBO", "GOOGLE*GOOGLE PLAY",
-                "AMC ONLINE")),
+                      "GOOGLE *Google Play", "HBO", "GOOGLE*GOOGLE PLAY",
+                      "AMC ONLINE", "Amazon Digital Svcs")),
 
-        // Technology
+        // Technology.
+        IT(listOf("KINESIS CORPORATION", "AMZ*Lenovo_USA", "APL*APPLE ONLINE STORE")),
         TechSubscription(listOf("HEROKU", "github", "ADOBE", "JetBrains", "MEETUP",
                                 "Google Storage", "GOOGLE *Dark Sky", "INVISIONAPP",
                                 "LUCID SOFTWARE INC", "FS *Sketch", "STUDIO MDS",
                                 "CREATIVEMARKET.COM", "FRAMER.COM", "ESET WWW.ESET.COM",
-                                "PATREON*PLEDGE", "CKO*Patreon* Membership", "LINKEDIN",
-                                "SUBLIME HQ PTY LTD", "GSUITE_fasterl", "GSUITE R3BL.ORG")),
-        Domains(listOf("GOOGLE *Domains")),
+                                "LINKEDIN", "GOOGLE *YoWindow",
+                                "SUBLIME HQ PTY LTD", "GSUITE_fasterl", "GSUITE R3BL.ORG",
+                                "APL* ITUNES.COM", "LASTPASS.COM", "WORDPRESS",
+                                "GOOGLE *VOICE", "GOOGLE *Cgollner")),
+        GoogleDomains(listOf("GOOGLE *Domains")),
+        GSuite(listOf("GOOGLE *SERVICES")),
+        Donations(listOf("ARCHIVE.ORG", "Wikimedia", "GOOGLE *Donations CDP",
+                         "PATREON* MEMBERSHIP", "PATREON*PLEDGE", "CKO*Patreon* Membership",
+                         "TransferwiseCom_USD", "COMMUNITY FOUNDATION OF N")),
 
-        // Grooming
+        // Grooming.
         Beauty(
-                listOf("NORDSTROM", "MACYS", "MADISON REED", "VIZAVOO", "ETSY.COM",
-                        "UMBRELLA SALON")),
+                listOf("NORDSTROM", "MADISON REED", "VIZAVOO", "ETSY.COM",
+                       "UMBRELLA SALON", "EVANHEALY", "SQ *JENNY BARRY HAIR")),
         Clothing(listOf("Karen Millen", "Fabric.com", "7 FOR ALL MANKIND",
-                        "BLUE NILE LLC", "VIBRAM COMMERCE", "SUNGLASS HUT", "RENT THE RUNWAY")),
+                        "BLUE NILE LLC", "VIBRAM COMMERCE", "SUNGLASS HUT", "RENT THE RUNWAY",
+                        "LUCKYBRAND.COM", "LULULEMON", "LULULEMONCOM", "AMZ*Zappos.com",
+                        "ZAP*ZAPPOS.COM", "MAUI JIM/ZEAL OPTICS", "LEVI'S STORE",
+                        "LEVI'S", "AMZ*RedBubble Inc", "PANERAI BOUTIQUE LAJOLLA",
+                        "WatchStyle", "WWW.MOODFABRICS.COM")),
 
-        // Other
-        RetirementHome(listOf("TransferwiseCom_USD")),
-        Tax(listOf("TAX")),
+        // Other.
+        Fees(listOf("PURCHASE INTEREST CHARGE")),
+        Tax(listOf("TAX", "INCORPORATE.COM")),
+        Legal(listOf("WWW.ITITRANSLATES.COM", "ALCORN IMMIGRATION LAW PC",
+                     "ALCORN IMMIGRATIONLAW")),
 
-        // Unknown
+        // Unknown.
         Unknown(listOf("HANAHAUS RESERVATION"))
     }
 
