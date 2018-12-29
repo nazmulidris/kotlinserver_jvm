@@ -137,7 +137,7 @@ object fileupload {
     enum class Category(val descriptionList: List<String>) {
         // Transportation
         Cars(listOf("DETAIL PLUS", "PORSCHE", "HOOKED ON DRIVING", "HEYER PERFORMANCE",
-                    "THE TOLL ROADS", "GEICO")),
+                    "THE TOLL ROADS", "GEICO", "CARMAX")),
         Gas(listOf("THUNDERHILL PARK", "MENLO PARK BEACON", "SHELL OIL", "CHEVRON", "GAS",
                     "ABM ONSITE MARSHALL")),
         RideShare(listOf("LYFT", "UBER", "BART-DALY CITY QPS")),
@@ -147,7 +147,8 @@ object fileupload {
                 listOf("Amazon.com", "AMAZON MKTPLACE PMTS", "AMZN Mktp", "jet.com", "walmart",
                         "UPS", "USPS", "CRATE &amp; BARREL", "BedBathBeyond",
                         "WAL-MART", "CVS/PHARMACY", "TARGET", "STAPLES", "IKEA.COM", "WWW.KOHLS" +
-                        ".COM", "JOANN STORES", "THE HOME DEPOT", "IKEA EAST PALO ALTO")),
+                        ".COM", "JOANN STORES", "THE HOME DEPOT", "IKEA EAST PALO ALTO",
+                        "Amazon Prime", "TASKRABBIT", "ROOTCANDLES.COM", "WEST ELM E-COMMERCE")),
 
         // Services
         Phone(listOf("VZWRLSS")),
@@ -157,7 +158,7 @@ object fileupload {
         // Food
         Groceries(listOf("wholefds", "WHOLEFOODS.COM", "AMZ*WholeFoodsSTC10267", "TRADER JOE",
                          "Amazon Prime Now", "PrimeNowMktp", "Prime Now",
-                         "Amazon Prime Now Tips", "SAFEWAY")),
+                         "Amazon Prime Now Tips", "SAFEWAY", "NIJIYA MARKET", "PrimeNowTips")),
         Restaurants(
                 listOf("SQ *CAVIAR", "BLUE BOTTLE COFFEE", "doordash",
                         "LYFE KITCHEN", "COUPA", "LISAS TEA TIME LLC",
@@ -165,7 +166,10 @@ object fileupload {
                         "POKI BOW", "ROAM SAN MATEO", "FUKI SUSHI",
                         "STARBUCKS", "GRUBHUB", "AD HOC", "CHAAT BHAVAN",
                         "CAFE VENETIA", "CHROMATIC COFFEE", "CAFE SPROUT",
-                        "RANGOON RUBY", "LOCAL UNION 271", "ORENS HUMMUS")),
+                        "RANGOON RUBY", "LOCAL UNION 271", "ORENS HUMMUS",
+                        "TEASPOON", "CASCAL", "SCOUT COFFEE", "GOSHI JAPANESE RESTAURANT",
+                        "BIG SKY CAFE", "COCOHODO SUNNYVALE", "WWW.TOMMY-THAI.COM",
+                        "SOGONG DONG TOFU HOUSE")),
         Chocolate(listOf("WWWVALRHONA")),
 
         // Health
@@ -173,7 +177,8 @@ object fileupload {
 
         // Education
         Books(listOf("Amazon Services-Kindle")),
-        Courses(listOf("UDACITY", "EB INTERSECT 2018", "JOYCE THOM")),
+        Courses(listOf("UDACITY", "EB INTERSECT 2018", "JOYCE THOM", "HACKBRIGHT ACADEMY",
+                        "UdemyUS")),
 
         // Entertainment
         Music(listOf("GOOGLE *Google Music")),
@@ -186,7 +191,8 @@ object fileupload {
                                 "Google Storage", "GOOGLE *Dark Sky", "INVISIONAPP",
                                 "LUCID SOFTWARE INC", "FS *Sketch", "STUDIO MDS",
                                 "CREATIVEMARKET.COM", "FRAMER.COM", "ESET WWW.ESET.COM",
-                                "PATREON*PLEDGE", "LINKEDIN", "SUBLIME HQ PTY LTD")),
+                                "PATREON*PLEDGE", "CKO*Patreon* Membership", "LINKEDIN",
+                                "SUBLIME HQ PTY LTD", "GSUITE_fasterl", "GSUITE R3BL.ORG")),
         Domains(listOf("GOOGLE *Domains")),
 
         // Grooming
@@ -194,7 +200,7 @@ object fileupload {
                 listOf("NORDSTROM", "MACYS", "MADISON REED", "VIZAVOO", "ETSY.COM",
                         "UMBRELLA SALON")),
         Clothing(listOf("Karen Millen", "Fabric.com", "7 FOR ALL MANKIND",
-                        "BLUE NILE LLC")),
+                        "BLUE NILE LLC", "VIBRAM COMMERCE", "SUNGLASS HUT", "RENT THE RUNWAY")),
 
         // Other
         RetirementHome(listOf("TransferwiseCom_USD")),
