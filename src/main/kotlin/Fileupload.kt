@@ -167,15 +167,13 @@ object fileupload {
                        "CALIFORNIA LOYAL MOVER")),
 
         // Services.
-        Phone(listOf("VZWRLSS")),
-        Internet(listOf("COMCAST CALIFORNIA")),
-        Utilities(listOf("CITY OF PALO ALTO UT")),
+        Utilities(listOf("CITY OF PALO ALTO UT", "VZWRLSS", "COMCAST CALIFORNIA")),
 
         // Food.
         Groceries(listOf("wholefds", "WHOLEFOODS.COM", "AMZ*WholeFoodsSTC10267", "TRADER JOE",
                          "Amazon Prime Now", "PrimeNowMktp", "Prime Now",
                          "Amazon Prime Now Tips", "SAFEWAY", "NIJIYA MARKET", "PrimeNowTips",
-                         "DITTMERS", "INSTACART")),
+                         "DITTMERS", "INSTACART", "WWWVALRHONA")),
         Restaurants(
                 listOf("SQ *CAVIAR", "BLUE BOTTLE COFFEE", "doordash",
                        "LYFE KITCHEN", "COUPA", "LISAS TEA TIME LLC",
@@ -193,7 +191,6 @@ object fileupload {
                        "INDIAN STREET CAFE", "SLIDERBAR CAFE", "NAPA VALLEY COFFEE ROAST",
                        "SQ *RITUAL COFFEE ROASTER", "NAPA NOODLES", "THE COFFEE BEAN & TEA LEA",
                        "SQ *GO FISH POKE BAR - WE", "EAT24 *SULTANA MEDITER")),
-        Chocolate(listOf("WWWVALRHONA")),
 
         // Health.
         Health(listOf("GOOGLE *Massage", "GOOGLE WELLNESS CTR", "*OSMENA PEARL")),
@@ -204,10 +201,9 @@ object fileupload {
                          "Kindle Svcs", "SAN FRANCISCO SCHOOL OF")),
 
         // Entertainment.
-        Music(listOf("GOOGLE *Google Music")),
-        Movies(listOf("Amazon Video On Demand", "CINEMARK",
+        Entertainment(listOf("Amazon Video On Demand", "CINEMARK",
                       "GOOGLE *Google Play", "HBO", "GOOGLE*GOOGLE PLAY",
-                      "AMC ONLINE", "Amazon Digital Svcs")),
+                      "AMC ONLINE", "Amazon Digital Svcs", "GOOGLE *Google Music")),
 
         // Technology.
         IT(listOf("KINESIS CORPORATION", "AMZ*Lenovo_USA", "APL*APPLE ONLINE STORE")),
