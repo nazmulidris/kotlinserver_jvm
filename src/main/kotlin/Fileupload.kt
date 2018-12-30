@@ -239,7 +239,7 @@ object fileupload {
                      "ALCORN IMMIGRATIONLAW")),
 
         // Unknown.
-        Unknown(listOf("HANAHAUS RESERVATION"))
+        Uncategorised(listOf("HANAHAUS RESERVATION"))
     }
 
     enum class Headers(val id: String) {
