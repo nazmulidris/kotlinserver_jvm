@@ -87,7 +87,7 @@ object fileupload {
 
             // If a record didn't match any of the categories, then add it to Unknown
             if (!map.any { it.value.any { it == record } })
-                map.getOrPut(Category.Unknown) { mutableListOf() }.add(record)
+                map.getOrPut(Category.Uncategorised) { mutableListOf() }.add(record)
         }
         return map
     }
