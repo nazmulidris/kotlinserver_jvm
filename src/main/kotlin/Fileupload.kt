@@ -20,6 +20,7 @@ import org.apache.commons.io.IOUtils
 import java.io.StringReader
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
+import kotlin.math.roundToInt
 
 object fileupload {
     fun name() = javaClass.name
@@ -54,7 +55,7 @@ object fileupload {
         val reader = StringReader(csvString)
         val lines = CSVFormat.RFC4180.withFirstRecordAsHeader().parse(reader)
         val recordList = mutableListOf<Record>()
-        // Process each line in the reader
+        // Process each line in the reader.
         for (line in lines) {
             with(line) {
                 val record = Record(
@@ -76,7 +77,7 @@ object fileupload {
         for (record in recordList) {
             val (type, transDate, postDate, description, amount) = record
 
-            // Check to see if the record matches any of the Categories
+            // Check to see if the record matches any of the Categories.
             Category.values().forEach { category ->
                 category.descriptionList.forEach { categoryDescription ->
                     if (description.contains(categoryDescription, true)) {
@@ -85,7 +86,7 @@ object fileupload {
                 }
             }
 
-            // If a record didn't match any of the categories, then add it to Unknown
+            // If a record didn't match any of the categories, then add it to Uncategorised.
             if (!map.any { it.value.any { it == record } })
                 map.getOrPut(Category.Uncategorised) { mutableListOf() }.add(record)
         }
@@ -97,13 +98,13 @@ object fileupload {
         val totals = mutableMapOf<Category, Float>()
 
         map.keys.sorted().forEach {
-            // every category
+            // Every category.
 
             var categoryTotal = 0f
 
             val recordBuffer = StringBuilder()
             map[it]?.forEach {
-                // every record in a category
+                // Every record in a category.
                 categoryTotal += it.amount
                 with(recordBuffer) {
                     val highlightColor = when (it.type) {
@@ -125,7 +126,7 @@ object fileupload {
                 append("<h2>")
                 append(it)
                 append(", ")
-                append(categoryTotal)
+                append(categoryTotal.roundToInt() * -1)
                 append("</h2>")
                 append(recordBuffer)
             }
