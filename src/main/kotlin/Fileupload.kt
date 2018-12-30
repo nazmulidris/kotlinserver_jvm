@@ -135,14 +135,7 @@ object fileupload {
     }
 
     enum class Category(val descriptionList: List<String>) {
-        // Recreation.
-        Recreation(listOf("TICKLE PINK INN", "NAZARETH ICE OASIS", "THE FIGURE SKATING PRO SH",
-                          "SAN LUIS CREEK LODGE", "THE ESTATE YOUNTVILLE",
-                          "SIMRACEWAY PERFORMANCE", "BAY AREA GUN VAULT",
-                          "WATERCOURSE WAY", "BAYAREADRIVINGACADEMY",
-                          "HOLIDAY INN EXPRESS &amp; SU")),
 
-        // Transportation.
         Cars(listOf("DETAIL PLUS", "PORSCHE", "HOOKED ON DRIVING", "HEYER PERFORMANCE",
                     "THE TOLL ROADS", "GEICO", "CARMAX", "SFMTA 5TH &amp; MISSION GARA",
                     "CUSTOM ALIGNMENT", "THE TIRE RACK", "OG RACING AAR RACING GE")),
@@ -153,7 +146,6 @@ object fileupload {
                          "CALTRAIN 1010 HILLSDALE", "CSJ MKT &amp; S PEDRO GARAGE",
                          "BART-DALY CITY     QPS")),
 
-        // Household.
         Household(
                 listOf("Amazon.com", "AMAZON MKTPLACE PMTS", "AMZN Mktp", "jet.com", "walmart",
                        "UPS", "USPS", "BedBathBeyond",
@@ -166,10 +158,8 @@ object fileupload {
                        "APPFEE*PARK SQUARE APA", "AMZ*UCA7-SanJose-Prime", "APPFEE*THE SHADOWS",
                        "CALIFORNIA LOYAL MOVER")),
 
-        // Services.
         Utilities(listOf("CITY OF PALO ALTO UT", "VZWRLSS", "COMCAST CALIFORNIA")),
 
-        // Food.
         Groceries(listOf("wholefds", "WHOLEFOODS.COM", "AMZ*WholeFoodsSTC10267", "TRADER JOE",
                          "Amazon Prime Now", "PrimeNowMktp", "Prime Now",
                          "Amazon Prime Now Tips", "SAFEWAY", "NIJIYA MARKET", "PrimeNowTips",
@@ -192,36 +182,34 @@ object fileupload {
                        "SQ *RITUAL COFFEE ROASTER", "NAPA NOODLES", "THE COFFEE BEAN & TEA LEA",
                        "SQ *GO FISH POKE BAR - WE", "EAT24 *SULTANA MEDITER")),
 
-        // Health.
+        Recreation(listOf("TICKLE PINK INN", "NAZARETH ICE OASIS", "THE FIGURE SKATING PRO SH",
+                "SAN LUIS CREEK LODGE", "THE ESTATE YOUNTVILLE",
+                "SIMRACEWAY PERFORMANCE", "BAY AREA GUN VAULT",
+                "WATERCOURSE WAY", "BAYAREADRIVINGACADEMY",
+                "HOLIDAY INN EXPRESS &amp; SU")),
+
+        TechSubscription(listOf("HEROKU", "github", "ADOBE", "JetBrains", "MEETUP",
+                "Google Storage", "GOOGLE *Dark Sky", "INVISIONAPP",
+                "LUCID SOFTWARE INC", "FS *Sketch", "STUDIO MDS",
+                "CREATIVEMARKET.COM", "FRAMER.COM", "ESET WWW.ESET.COM",
+                "LINKEDIN", "GOOGLE *YoWindow",
+                "SUBLIME HQ PTY LTD", "GSUITE_fasterl", "GSUITE R3BL.ORG",
+                "APL* ITUNES.COM", "LASTPASS.COM", "WORDPRESS",
+                "GOOGLE *VOICE", "GOOGLE *Cgollner", "GOOGLE *Domains",
+                "GOOGLE *SERVICES")),
+
+        IT(listOf("KINESIS CORPORATION", "AMZ*Lenovo_USA", "APL*APPLE ONLINE STORE")),
+
+        Entertainment(listOf("Amazon Video On Demand", "CINEMARK",
+                "GOOGLE *Google Play", "HBO", "GOOGLE*GOOGLE PLAY",
+                "AMC ONLINE", "Amazon Digital Svcs", "GOOGLE *Google Music")),
+
+        Education(listOf("UDACITY", "EB INTERSECT 2018", "JOYCE THOM", "HACKBRIGHT ACADEMY",
+                "UdemyUS", "ACEABLE INC. ACEABLE C", "Amazon Services-Kindle",
+                "Kindle Svcs", "SAN FRANCISCO SCHOOL OF")),
+
         Health(listOf("GOOGLE *Massage", "GOOGLE WELLNESS CTR", "*OSMENA PEARL")),
 
-        // Education.
-        Education(listOf("UDACITY", "EB INTERSECT 2018", "JOYCE THOM", "HACKBRIGHT ACADEMY",
-                         "UdemyUS", "ACEABLE INC. ACEABLE C", "Amazon Services-Kindle",
-                         "Kindle Svcs", "SAN FRANCISCO SCHOOL OF")),
-
-        // Entertainment.
-        Entertainment(listOf("Amazon Video On Demand", "CINEMARK",
-                      "GOOGLE *Google Play", "HBO", "GOOGLE*GOOGLE PLAY",
-                      "AMC ONLINE", "Amazon Digital Svcs", "GOOGLE *Google Music")),
-
-        // Technology.
-        IT(listOf("KINESIS CORPORATION", "AMZ*Lenovo_USA", "APL*APPLE ONLINE STORE")),
-        TechSubscription(listOf("HEROKU", "github", "ADOBE", "JetBrains", "MEETUP",
-                                "Google Storage", "GOOGLE *Dark Sky", "INVISIONAPP",
-                                "LUCID SOFTWARE INC", "FS *Sketch", "STUDIO MDS",
-                                "CREATIVEMARKET.COM", "FRAMER.COM", "ESET WWW.ESET.COM",
-                                "LINKEDIN", "GOOGLE *YoWindow",
-                                "SUBLIME HQ PTY LTD", "GSUITE_fasterl", "GSUITE R3BL.ORG",
-                                "APL* ITUNES.COM", "LASTPASS.COM", "WORDPRESS",
-                                "GOOGLE *VOICE", "GOOGLE *Cgollner")),
-        GoogleDomains(listOf("GOOGLE *Domains")),
-        GSuite(listOf("GOOGLE *SERVICES")),
-        Donations(listOf("ARCHIVE.ORG", "Wikimedia", "GOOGLE *Donations CDP",
-                         "PATREON* MEMBERSHIP", "PATREON*PLEDGE", "CKO*Patreon* Membership",
-                         "TransferwiseCom_USD", "COMMUNITY FOUNDATION OF N")),
-
-        // Grooming.
         Beauty(
                 listOf("NORDSTROM", "MADISON REED", "VIZAVOO", "ETSY.COM",
                        "UMBRELLA SALON", "EVANHEALY", "SQ *JENNY BARRY HAIR")),
@@ -232,14 +220,17 @@ object fileupload {
                         "LEVI'S", "AMZ*RedBubble Inc", "PANERAI BOUTIQUE LAJOLLA",
                         "WatchStyle", "WWW.MOODFABRICS.COM")),
 
-        // Other.
         Fees(listOf("PURCHASE INTEREST CHARGE")),
         Tax(listOf("TAX", "INCORPORATE.COM")),
         Legal(listOf("WWW.ITITRANSLATES.COM", "ALCORN IMMIGRATION LAW PC",
                      "ALCORN IMMIGRATIONLAW")),
 
-        // Unknown.
-        Uncategorised(listOf("HANAHAUS RESERVATION"))
+        Uncategorised(listOf("HANAHAUS RESERVATION")),
+
+        Donations(listOf("ARCHIVE.ORG", "Wikimedia", "GOOGLE *Donations CDP",
+                "PATREON* MEMBERSHIP", "PATREON*PLEDGE", "CKO*Patreon* Membership",
+                "TransferwiseCom_USD", "COMMUNITY FOUNDATION OF N")),
+
     }
 
     enum class Headers(val id: String) {
