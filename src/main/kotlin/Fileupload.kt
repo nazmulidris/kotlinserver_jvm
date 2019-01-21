@@ -16,6 +16,7 @@
 
 import io.javalin.Context
 import org.apache.commons.csv.CSVFormat
+import org.apache.commons.csv.CSVRecord
 import org.apache.commons.io.IOUtils
 import java.io.StringReader
 import java.time.LocalDate
@@ -60,7 +61,7 @@ object fileupload {
             with(line) {
                 val record = Record(
                         type = get(Headers.TYPE.id),
-                        transDate = get(Headers.XACT.id).parseDate(),
+                        transDate = get(getDateFieldName(line)).parseDate(),
                         postDate = get(Headers.POST.id).parseDate(),
                         description = get(Headers.DESC.id),
                         amount = get(Headers.AMT.id).parseFloat()
@@ -184,30 +185,30 @@ object fileupload {
                        "SQ *GO FISH POKE BAR - WE", "EAT24 *SULTANA MEDITER")),
 
         Recreation(listOf("TICKLE PINK INN", "NAZARETH ICE OASIS", "THE FIGURE SKATING PRO SH",
-                "SAN LUIS CREEK LODGE", "THE ESTATE YOUNTVILLE",
-                "SIMRACEWAY PERFORMANCE", "BAY AREA GUN VAULT",
-                "WATERCOURSE WAY", "BAYAREADRIVINGACADEMY",
-                "HOLIDAY INN EXPRESS &amp; SU")),
+                          "SAN LUIS CREEK LODGE", "THE ESTATE YOUNTVILLE",
+                          "SIMRACEWAY PERFORMANCE", "BAY AREA GUN VAULT",
+                          "WATERCOURSE WAY", "BAYAREADRIVINGACADEMY",
+                          "HOLIDAY INN EXPRESS &amp; SU")),
 
         TechSubscription(listOf("HEROKU", "github", "ADOBE", "JetBrains", "MEETUP",
-                "Google Storage", "GOOGLE *Dark Sky", "INVISIONAPP",
-                "LUCID SOFTWARE INC", "FS *Sketch", "STUDIO MDS",
-                "CREATIVEMARKET.COM", "FRAMER.COM", "ESET WWW.ESET.COM",
-                "LINKEDIN", "GOOGLE *YoWindow",
-                "SUBLIME HQ PTY LTD", "GSUITE_fasterl", "GSUITE R3BL.ORG",
-                "APL* ITUNES.COM", "LASTPASS.COM", "WORDPRESS",
-                "GOOGLE *VOICE", "GOOGLE *Cgollner", "GOOGLE *Domains",
-                "GOOGLE *SERVICES")),
+                                "Google Storage", "GOOGLE *Dark Sky", "INVISIONAPP",
+                                "LUCID SOFTWARE INC", "FS *Sketch", "STUDIO MDS",
+                                "CREATIVEMARKET.COM", "FRAMER.COM", "ESET WWW.ESET.COM",
+                                "LINKEDIN", "GOOGLE *YoWindow",
+                                "SUBLIME HQ PTY LTD", "GSUITE_fasterl", "GSUITE R3BL.ORG",
+                                "APL* ITUNES.COM", "LASTPASS.COM", "WORDPRESS",
+                                "GOOGLE *VOICE", "GOOGLE *Cgollner", "GOOGLE *Domains",
+                                "GOOGLE *SERVICES")),
 
         IT(listOf("KINESIS CORPORATION", "AMZ*Lenovo_USA", "APL*APPLE ONLINE STORE")),
 
         Entertainment(listOf("Amazon Video On Demand", "CINEMARK",
-                "GOOGLE *Google Play", "HBO", "GOOGLE*GOOGLE PLAY",
-                "AMC ONLINE", "Amazon Digital Svcs", "GOOGLE *Google Music")),
+                             "GOOGLE *Google Play", "HBO", "GOOGLE*GOOGLE PLAY",
+                             "AMC ONLINE", "Amazon Digital Svcs", "GOOGLE *Google Music")),
 
         Education(listOf("UDACITY", "EB INTERSECT 2018", "JOYCE THOM", "HACKBRIGHT ACADEMY",
-                "UdemyUS", "ACEABLE INC. ACEABLE C", "Amazon Services-Kindle",
-                "Kindle Svcs", "SAN FRANCISCO SCHOOL OF")),
+                         "UdemyUS", "ACEABLE INC. ACEABLE C", "Amazon Services-Kindle",
+                         "Kindle Svcs", "SAN FRANCISCO SCHOOL OF")),
 
         Health(listOf("GOOGLE *Massage", "GOOGLE WELLNESS CTR", "*OSMENA PEARL")),
 
@@ -229,17 +230,27 @@ object fileupload {
         Uncategorised(listOf("HANAHAUS RESERVATION")),
 
         Donations(listOf("ARCHIVE.ORG", "Wikimedia", "GOOGLE *Donations CDP",
-                "PATREON* MEMBERSHIP", "PATREON*PLEDGE", "CKO*Patreon* Membership",
-                "TransferwiseCom_USD", "COMMUNITY FOUNDATION OF N")),
+                         "PATREON* MEMBERSHIP", "PATREON*PLEDGE", "CKO*Patreon* Membership",
+                         "TransferwiseCom_USD", "COMMUNITY FOUNDATION OF N")),
 
     }
 
     enum class Headers(val id: String) {
         TYPE("Type"),
-        XACT("Trans Date"),
+        DATE_NAME1("Trans Date"),
+        DATE_NAME2("Transaction Date"),
         POST("Post Date"),
         DESC("Description"),
-        AMT("Amount")
+        AMT("Amount");
+    }
+
+    /**
+     * Chase bank changed the transaction date field around Jan 2019. This allows CSV files
+     * that were generated before Jan 2019 and after to be parsed successfully.
+     */
+    fun getDateFieldName(line: CSVRecord): String {
+        return if (line.isMapped(Headers.DATE_NAME1.id)) Headers.DATE_NAME1.id
+        else Headers.DATE_NAME2.id
     }
 
     data class Record(val type: String,
