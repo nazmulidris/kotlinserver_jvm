@@ -143,7 +143,7 @@ object fileupload {
                     "CUSTOM ALIGNMENT", "THE TIRE RACK", "OG RACING AAR RACING GE")),
         Gas(listOf("THUNDERHILL PARK", "MENLO PARK BEACON", "SHELL OIL", "CHEVRON", "GAS",
                    "ABM ONSITE MARSHALL", "LAKEWOOD VALERO", "SALAH SINCLAIR",
-                   "76 - PATRICK POUNDERS", "7-ELEVEN 33011")),
+                   "76 - PATRICK POUNDERS", "7-ELEVEN 33011", "76 - DBA GREG GALATOLO")),
         RideShare(listOf("LYFT", "UBER", "BART-DALY CITY QPS", "ENTERPRISE RENT-A-CAR",
                          "CALTRAIN 1010 HILLSDALE", "CSJ MKT &amp; S PEDRO GARAGE",
                          "BART-DALY CITY     QPS")),
@@ -158,7 +158,7 @@ object fileupload {
                        "CRATE&amp;BARREL AND CB2", "CRATE &amp; BARREL", "WALGREENS",
                        "MOO.COM", "BLOOMINGDALES  STANFORD", "YELPINC*DEALCALIFORNIA",
                        "APPFEE*PARK SQUARE APA", "AMZ*UCA7-SanJose-Prime", "APPFEE*THE SHADOWS",
-                       "CALIFORNIA LOYAL MOVER")),
+                       "CALIFORNIA LOYAL MOVER", "BED BATH &amp; BEYOND")),
 
         Utilities(listOf("CITY OF PALO ALTO UT", "VZWRLSS", "COMCAST CALIFORNIA")),
 
@@ -182,7 +182,9 @@ object fileupload {
                        "THE COFFEE BEAN &amp; TEA LEA", "SQ *GELATAIO", "STEAM RESTAURANT",
                        "INDIAN STREET CAFE", "SLIDERBAR CAFE", "NAPA VALLEY COFFEE ROAST",
                        "SQ *RITUAL COFFEE ROASTER", "NAPA NOODLES", "THE COFFEE BEAN & TEA LEA",
-                       "SQ *GO FISH POKE BAR - WE", "EAT24 *SULTANA MEDITER")),
+                       "SQ *GO FISH POKE BAR - WE", "EAT24 *SULTANA MEDITER",
+                        "TRUE FOOD KITCHEN", "Equator Coffees", "PERRY'S ON MAGNOLIA",
+                        "STATION HOUSE CAFE", "REVERE COFFEE &amp; TEA")),
 
         Recreation(listOf("TICKLE PINK INN", "NAZARETH ICE OASIS", "THE FIGURE SKATING PRO SH",
                           "SAN LUIS CREEK LODGE", "THE ESTATE YOUNTVILLE",
@@ -204,7 +206,7 @@ object fileupload {
 
         Entertainment(listOf("Amazon Video On Demand", "CINEMARK",
                              "GOOGLE *Google Play", "HBO", "GOOGLE*GOOGLE PLAY",
-                             "AMC ONLINE", "Amazon Digital Svcs", "GOOGLE *Google Music")),
+                             "AMC ONLINE", "Amazon Digital Svcs", "GOOGLE *Google Music", "Prime Video")),
 
         Education(listOf("UDACITY", "EB INTERSECT 2018", "JOYCE THOM", "HACKBRIGHT ACADEMY",
                          "UdemyUS", "ACEABLE INC. ACEABLE C", "Amazon Services-Kindle",
@@ -220,7 +222,7 @@ object fileupload {
                         "LUCKYBRAND.COM", "LULULEMON", "LULULEMONCOM", "AMZ*Zappos.com",
                         "ZAP*ZAPPOS.COM", "MAUI JIM/ZEAL OPTICS", "LEVI'S STORE",
                         "LEVI'S", "AMZ*RedBubble Inc", "PANERAI BOUTIQUE LAJOLLA",
-                        "WatchStyle", "WWW.MOODFABRICS.COM")),
+                        "WatchStyle", "WWW.MOODFABRICS.COM", "The Frye Company")),
 
         Fees(listOf("PURCHASE INTEREST CHARGE")),
         Tax(listOf("TAX", "INCORPORATE.COM")),
