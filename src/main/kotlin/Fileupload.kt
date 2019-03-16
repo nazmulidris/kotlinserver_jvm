@@ -323,7 +323,6 @@ object fileupload {
                                 "GOOGLE *VOICE",
                                 "GOOGLE *Cgollner",
                                 "GOOGLE *Domains",
-                                "GOOGLE *SERVICES",
                                 "GOOGLE *WeatherBug")),
 
         IT(listOf("PADDLE.NET* ADGUARD",
@@ -354,7 +353,8 @@ object fileupload {
         Health(listOf("GOOGLE *GOOGLE SERVICES",
                       "GOOGLE *Massage",
                       "GOOGLE WELLNESS CTR",
-                      "*OSMENA PEARL")),
+                      "*OSMENA PEARL",
+                      "GOOGLE *SERVICES")),
 
         Beauty(
                 listOf("NORDSTROM", "MADISON REED", "VIZAVOO", "ETSY.COM",
