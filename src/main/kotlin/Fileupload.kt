@@ -167,7 +167,9 @@ object fileupload {
                          "ENTERPRISE RENT-A-CAR",
                          "CALTRAIN 1010 HILLSDALE",
                          "CSJ MKT &amp; S PEDRO GARAGE",
-                         "BART-DALY CITY     QPS")),
+                         "BART-DALY CITY     QPS",
+                         "ALASKA AIR",
+                         "JETBLUE")),
 
         Household(
                 listOf("Amazon.com",
@@ -204,7 +206,9 @@ object fileupload {
                        "AMZ*UCA7-SanJose-Prime",
                        "APPFEE*THE SHADOWS",
                        "CALIFORNIA LOYAL MOVER",
-                       "BED BATH &amp; BEYOND")),
+                       "BED BATH &amp; BEYOND",
+                        "T J MAXX",
+                        "KeepCup")),
 
         Utilities(listOf("CITY OF PALO ALTO UT",
                          "VZWRLSS",
@@ -290,7 +294,8 @@ object fileupload {
                           "BAY AREA GUN VAULT",
                           "WATERCOURSE WAY",
                           "BAYAREADRIVINGACADEMY",
-                          "HOLIDAY INN EXPRESS &amp; SU")),
+                          "HOLIDAY INN EXPRESS &amp; SU",
+                          "SHARKS ICE AT SAN JOSE")),
 
         TechSubscription(listOf("HEROKU",
                                 "github",
@@ -317,7 +322,8 @@ object fileupload {
                                 "GOOGLE *VOICE",
                                 "GOOGLE *Cgollner",
                                 "GOOGLE *Domains",
-                                "GOOGLE *SERVICES")),
+                                "GOOGLE *SERVICES",
+                                "GOOGLE *WeatherBug")),
 
         IT(listOf("PADDLE.NET* ADGUARD",
                   "KINESIS CORPORATION",
