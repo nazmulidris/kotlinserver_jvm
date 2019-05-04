@@ -33,8 +33,7 @@ object fileupload {
                 <title>Spend Analysis</title>
                 <link href="https://fonts.googleapis.com/css?family=Google+Sans" rel="stylesheet">
                 <style>
-                    h1 { font-family: 'Google Sans', Arial, sans-serif; }
-                    h2 { font-family: 'Google Sans', Arial, sans-serif; }
+                    body { font-family: 'Google Sans', Arial, sans-serif; }
                 </style>
             <head/>
             <body>
