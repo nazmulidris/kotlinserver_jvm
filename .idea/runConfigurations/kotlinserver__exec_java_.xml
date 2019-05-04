@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="run server locally" type="MavenRunConfiguration" factoryName="Maven">
+  <configuration default="false" name="kotlinserver [exec:java]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
     <MavenSettings>
       <option name="myGeneralSettings" />
       <option name="myRunnerSettings" />
@@ -13,7 +13,7 @@
               <option value="exec:java" />
             </list>
           </option>
-          <option name="pomFileName" value="pom.xml" />
+          <option name="pomFileName" />
           <option name="profilesMap">
             <map />
           </option>
