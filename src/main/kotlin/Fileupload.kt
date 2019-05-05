@@ -393,8 +393,8 @@ object fileupload {
                         "PANERAI BOUTIQUE LAJOLLA",
                         "WatchStyle",
                         "WWW.MOODFABRICS.COM",
-                        "The Frye Company"),
-                        "ORIS"),
+                        "The Frye Company",
+                        "ORIS")),
 
         Fees(listOf("PURCHASE INTEREST CHARGE")),
         Tax(listOf("TAX", "INCORPORATE.COM", "DANIEL P KENNEDY INC")),
