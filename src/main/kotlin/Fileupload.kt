@@ -172,7 +172,7 @@ object fileupload {
                          "ALASKA AIR",
                          "JETBLUE",
                          "SFO PARKINGCENTRA",
-                         "PALM SPRINGS 0445A")),
+                         "HERTZ RENT-A-CAR")),
 
         Household(
                 listOf("Amazon.com",
@@ -336,7 +336,7 @@ object fileupload {
                                 "GOOGLE *Cgollner",
                                 "GOOGLE *Domains",
                                 "GOOGLE *WeatherBug",
-                                " GOOGLE *Chrome Web Str")),
+                                "GOOGLE *Chrome Web Str")),
 
         IT(listOf("PADDLE.NET* ADGUARD",
                   "KINESIS CORPORATION",
@@ -397,7 +397,7 @@ object fileupload {
                         "ORIS")),
 
         Fees(listOf("PURCHASE INTEREST CHARGE")),
-        Tax(listOf("TAX", "INCORPORATE.COM", "DANIEL P KENNEDY INC")),
+        Tax(listOf("TAX", "INCORPORATE.COM", "DANIEL P KENNEDY")),
         Legal(listOf("WWW.ITITRANSLATES.COM", "ALCORN IMMIGRATION LAW PC",
                      "ALCORN IMMIGRATIONLAW")),
 
